@@ -35,7 +35,7 @@ export default function UserForm(props){
                 <h2>Add a User</h2>
 
                 {/* disabled button */}
-                <button disabled={disabled}>submit</button>
+                <button id='submitBtn' disabled={disabled}>submit</button>
                 {/* render validation errors*/}
 
                 <div className='errors'>
