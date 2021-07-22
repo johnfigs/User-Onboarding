@@ -6,7 +6,8 @@ export default function User({details}) {
     }
     return (
         <div className='friend container'>
-            
+            <h2>{details.name}</h2>
+            <p>Email: {details.email}</p>
         </div>
     )
 }
