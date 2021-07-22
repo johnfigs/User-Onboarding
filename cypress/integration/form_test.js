@@ -19,22 +19,35 @@ describe('User-Onboarding-App', () =>{
         nameInput().should('exist')
         emailInput().should('exist')
         passwordInput().should('exist')
-        termsInput().should('exist')
+        termsCheck().should('exist')
     })
 
-    //inputting a user test
+    //inputting a user's name test
     it('test inputting into the form and checking expected value', () =>{
         nameInput().type("Johnathan")
         nameInput().should('have.value', 'Johnathan')
     })
+    //inputting a user's email test
+    it('test inputting email', () =>{
+        emailInput().type("test@test.com")
+    })
+    //inputting a user's password test
+    it('Inputting a user password', () =>{
+        passwordInput().type("mySecret!")
+    })
+    //checking the user's terms checkbox test
+    it('checking the terms checkbox test', () => {
+        termsCheck().check()
+    })
+
 
 
 })
 
-//definitions of components
+//definitions of components & get
 const foobarInput = () => cy.get('input[name=foobar]')
 const submitBtn = () => cy.get('button[id="submitBtn"]')
 const nameInput = () => cy.get('input[name="name"]')
 const emailInput = () => cy.get('input[name="email"]')
 const passwordInput = () => cy.get('input[name="password"]')
-const termsInput = () => cy.get('input[name="terms"]')
+const termsCheck = () => cy.get('[type="checkbox"]')
