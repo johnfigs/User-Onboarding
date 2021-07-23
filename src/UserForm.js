@@ -38,10 +38,11 @@ export default function UserForm(props){
                 <button id='submitBtn' disabled={disabled}>submit</button>
                 {/* render validation errors*/}
 
-                <div className='errors'>
+                <div id='errors' className='errors'>
                 {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
-                    <div>{errors.name}</div>
-                    <div>{errors.email}</div>
+                    <div id="errorInName">{errors.name}</div>
+                    <div id="errorInEmail">{errors.email}</div>
+                    <div id="errorInPassword">{errors.password}</div>
                  </div>
             </div>
 

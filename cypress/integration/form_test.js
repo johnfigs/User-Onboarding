@@ -47,6 +47,12 @@ describe('User-Onboarding-App', () =>{
         termsCheck().check()
         submitBtn().click()
     })
+    //check form validation is occurring if no username is entered
+    it('checking empty values in username', () => {
+        nameInput().type("Johnathan")
+        nameInput().clear()
+        invalidForm().should('exist')
+    })
 
 
 
@@ -59,3 +65,4 @@ const nameInput = () => cy.get('input[name="name"]')
 const emailInput = () => cy.get('input[name="email"]')
 const passwordInput = () => cy.get('input[name="password"]')
 const termsCheck = () => cy.get('[type="checkbox"]')
+const invalidForm = () => cy.get('div[id="errorInName"]')
