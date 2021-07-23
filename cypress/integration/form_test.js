@@ -33,11 +33,19 @@ describe('User-Onboarding-App', () =>{
     })
     //inputting a user's password test
     it('Inputting a user password', () =>{
-        passwordInput().type("mySecret!")
+        passwordInput().type("mySecret!!!!!!")
     })
     //checking the user's terms checkbox test
     it('checking the terms checkbox test', () => {
         termsCheck().check()
+    })
+    //check if user can submit the form
+    it('checking if user can submit form', () =>{
+        nameInput().type("Johnathan")
+        emailInput().type("test@test.com")
+        passwordInput().type("mySecret!!!!!!")
+        termsCheck().check()
+        submitBtn().click()
     })
 
 
